@@ -1,0 +1,73 @@
+# plataforma para poder contruir, ejecutar y desplegar aplicaciones en 
+# contenedores de manera eficiente y segura.
+# tanto en tu computador y en producción. por el Dockerfile
+
+# genera paquetes de dependencias y ejecutables en un contenedor con versiones especificas.
+# empaquetado!!! descarga de la nuve la aplicación y se la entrega a docker y la descarga!!!
+
+# docker-compose up
+
+# se pueden tener paquetes distintos en ambientes completamente aislados.
+# imagen y contenedor!!!
+
+#------------------------------------------
+
+# Un contenedor es un ambiente aislado!
+# y una maquina virtual es una abstraccion de un ambiente fisico!
+
+# Hypervisor (app que se instala) como VirtualBox, VMWare, Hyper-V de windows, Parallels de mac
+# que se instala en un sistema operativo y permite crear maquinas virtuales.
+
+# Contenedores: applicaciones aisladas, menos espacio en disco, usan el mismo SO
+# menos recursos para ejecutarse e inician mas rapido.
+
+#------------------------------------------
+
+# Cliente se comunica con el servidor de docker
+# a traves de una API REST.
+# y el servidor es llamado Docker Engine. Enyin
+
+# Codigo dentro del disco duro : Aplicación
+# Ejecutamos app y esta corriendo: Proceso
+# multiples instancias de la app corriendo: Multiples procesos
+
+
+#Contenedor (Procesos)
+#Ubuntu (SO) : cuenta con el hardware fisico y el kernel, por encima del kernel la capa de aplicacion.
+
+# Aplicación aqui estan las MV, solo aplicacion
+# Kernel aqui contenedor se comunica con el kernel, se salta procesos intermedio por eso su rapidez.
+# Hadware
+
+#------------------------------------------
+# Dockerfile:
+
+# codigo plato para empaquetar aplicaciones todo lo necesario
+# coomo version y ambiente de ejecucion.
+# Un contenedor es un proceso, una app es codigo almacenado
+# y el proceso es el codigo ejecutandose
+
+# contenedor proceso sistema de archivo y imagen = aplicacion
+
+#------------------------------------------
+
+# Una imagen es una aplicación que tiene todo lo necesario para ejecutarse, 
+# incluyendo el código, un runtime, librerías, variables de entorno y archivos de configuración,
+# Dependecias (nodejs, python, java, etc) y el sistema operativo.
+
+# Un Contenedor es un proceso, inicia a partir de una imagen con su propio sistema de archivos,
+# ambiente aislado, puede detenerse y volver iniciar
+# multiples contenedor a traves de la misma imagen.
+
+# OJO CONTENEDORES INPENDIENTES PERO SE PUEDEN COMUNICAR
+# CADA CONTENEDOR ES SU PROPIO UNIVERSO, SI A MODIFICA NO INTERFIERE A B.
+
+#------------------------------------------
+
+#intalar runtime, instalar dependencias, ejecutar el proyecto.
+
+#------------------------------------------
+
+# Por que se excluyen archivos?
+# 1. Para tomar menos tiempo.
+# 2. Para que las imagenes pesen menos, mas faciles de transferir por la red.

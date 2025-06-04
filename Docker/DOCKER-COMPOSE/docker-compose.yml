@@ -1,0 +1,43 @@
+#version ya no interpretada, no es necesaria, ya que siempre utiliza la ultima
+
+service: #nombre servicios para que entre ellos de puedan comunicar
+  app: 
+    build: ./frontend
+    ports:
+      - 80:5173
+    volumes:
+      - ./frontend/src:/app/src
+  api:
+    build: ./backend
+    ports: 
+      - 3000:3000
+    enviroment:
+      DB_URL: mongodb://db/gamify
+    volumes:
+      - ./backend/app:/app/app #donde se encuentra el codigo fuente
+      # volumen anonimo
+    depends_on:
+      - db #espera el servicio, depende de otro, depende de db primero y dps se ejecuta api
+      # espera que se contruya y se ejecuta
+      
+  api_test:
+    images: holamundo-api #nombre del directorio - nombre del servicio
+    enviroment:
+      DB_URL: mongodb://db/gamifytest
+    volumes:
+      - ./backend/app:/app/app #se vea reflejado los cambios
+      - ./backend/test:/app/test
+    depends_on:
+      - db 
+    command: npm test
+  
+
+  db:
+    image: mongo:5.0.19-focal # mongo SO ubuntu => pesan ciento de los megas
+    ports: 
+      - 27017:27017 # anfitrion : contenedor
+    volumes:
+      - gamify:/data/db # mapear ruta en especifico : . (root)    y anidada con /
+      # volumen nombrados
+volumes:
+  gamify: 

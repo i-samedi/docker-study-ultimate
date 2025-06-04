@@ -1,0 +1,15 @@
+nombre: Ignacio
+apellido: medina
+edad: 22
+avtivo: true
+etiquetas:
+  - instructor
+  - desarrollador
+direccion:
+  calle: Queen Streat
+  numero: 222
+
+#YML es mas lento q JSON ya que debe tener tiempo para poder interpretarlo string int bool etc.
+#version produccion esta en json
+# yml se utiliza para configuracion
+# json transferir informacion entre distintas maquinas

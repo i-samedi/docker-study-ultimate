@@ -1,0 +1,11 @@
+{
+    "nombre" : "Ignacio",
+    "apellido": "Medina",
+    "edad": 12,
+    "activo": true,
+    "etiquetas": ["Instructor", "desarrollador"],
+    "direccion":{
+        "calle": 555,
+        "list": true
+    }
+}
